@@ -10,6 +10,10 @@
   <div id="app">
       <App></App>
   </div>
+  @if(config('app.env') === 'production')
+  <script src="{{ secure_asset('js/app.js') }}"></script>
+  @elseif(config('app.env') === 'local')
   <script src="{{ asset('js/app.js') }}"></script>
+  @endif
 </body>
 </html>
